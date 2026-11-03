@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg">#E6121418</color>
+    <color name="panel">#F01A1D24</color>
+    <color name="accent">#2F6FED</color>
+    <color name="accent_dim">#1A3A7A</color>
+    <color name="text">#F0F2F5</color>
+    <color name="muted">#9AA3B2</color>
+    <color name="danger">#E25555</color>
+    <color name="online">#3DCF7A</color>
+    <color name="bubble_bg">#CC141820</color>
+</resources>

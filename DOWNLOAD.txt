@@ -1,0 +1,21 @@
+Windows-сборка (содержимое win-unpacked, ~111 МБ):
+
+Локально: /workspace/overlay-chat/client/dist/OverlayChat-Windows-x64.zip
+
+Публичная ссылка (gofile; catbox.moe: "Uploads paused"):
+https://gofile.io/d/d8eEhV11
+
+MD5: a8a84fa3335e17bcae2491c5840418b5
+Файл: OverlayChat-Windows-x64.zip
+
+Запуск: распаковать → OverlayChat/Overlay Chat.exe
+Сервер отдельно (README → «Хостинг»): Timeweb/Selectel и т.п., без VPN в РФ.
+Ассеты локальные (system fonts + src/vendor/socket.io.min.js).
+
+---
+Android debug APK (~6.2 МБ):
+
+Локально: /workspace/overlay-chat/android/dist/OverlayChat-android-debug.apk
+Публичная ссылка (gofile; catbox paused): https://gofile.io/d/wQRfO1Zl
+MD5: dcc8047c21970464b91c8ec923aad696
+package: ru.overlaychat.app

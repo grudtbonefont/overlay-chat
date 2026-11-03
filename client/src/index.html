@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' http: https: ws: wss:; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data:;" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Overlay Chat</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- Title bar / drag region -->
+    <header id="titlebar" class="titlebar drag">
+      <div class="titlebar-left no-drag">
+        <button id="btn-lock" class="icon-btn interactive" title="Заблокировать оверлей (клики проходят в игру)">🔓</button>
+        <span id="app-title">Overlay Chat</span>
+        <span id="conn-status" class="status offline" title="Статус соединения">●</span>
+      </div>
+      <div class="titlebar-right no-drag">
+        <button id="btn-settings" class="icon-btn" title="Настройки">⚙</button>
+        <button id="btn-min" class="icon-btn" title="Свернуть">─</button>
+        <button id="btn-close" class="icon-btn danger" title="Закрыть">✕</button>
+      </div>
+    </header>
+
+    <!-- Auth screen -->
+    <section id="screen-auth" class="screen">
+      <h1>Вход</h1>
+      <p class="hint">Никнейм и пароль для игрового чата</p>
+      <form id="form-auth">
+        <label>Никнейм
+          <input id="auth-nick" type="text" autocomplete="username" maxlength="24" required />
+        </label>
+        <label>Пароль
+          <input id="auth-pass" type="password" autocomplete="current-password" required />
+        </label>
+        <div class="row">
+          <button type="submit" id="btn-login" class="btn primary">Войти</button>
+          <button type="button" id="btn-register" class="btn">Регистрация</button>
+        </div>
+        <p id="auth-error" class="error" hidden></p>
+      </form>
+    </section>
+
+    <!-- Main chat UI -->
+    <section id="screen-main" class="screen" hidden>
+      <nav class="tabs">
+        <button class="tab active" data-tab="chats">Чаты</button>
+        <button class="tab" data-tab="friends">Друзья</button>
+        <button class="tab" data-tab="rooms">Комнаты</button>
+      </nav>
+
+      <div class="layout">
+        <aside id="sidebar" class="sidebar">
+          <!-- filled by JS -->
+        </aside>
+        <main class="chat-pane">
+          <div id="chat-header" class="chat-header">Выберите чат</div>
+          <div id="messages" class="messages"></div>
+          <form id="form-send" class="composer">
+            <input id="msg-input" class="interactive" type="text" placeholder="Сообщение… (Ctrl+Enter — фокус)" maxlength="2000" autocomplete="off" disabled />
+            <button type="submit" id="btn-send" class="btn primary" disabled>➤</button>
+          </form>
+        </main>
+      </div>
+    </section>
+
+    <!-- Settings modal -->
+    <div id="modal-settings" class="modal" hidden>
+      <div class="modal-card">
+        <h2>Настройки</h2>
+        <label>Адрес сервера
+          <input id="set-server" type="text" placeholder="http://localhost:3000" />
+        </label>
+        <label>Глобальный хоткей фокуса
+          <input id="set-hotkey" type="text" placeholder="CommandOrControl+Enter" />
+        </label>
+        <p class="hint tiny">По умолчанию Ctrl+Enter (не обычный Enter — чтобы не ломать игры). Формат Electron Accelerator.</p>
+        <label>Прозрачность окна: <span id="opacity-val">85%</span>
+          <input id="set-opacity" type="range" min="40" max="100" value="85" />
+        </label>
+        <div class="row">
+          <button id="btn-save-settings" class="btn primary">Сохранить</button>
+          <button id="btn-logout" class="btn danger">Выйти</button>
+          <button id="btn-close-settings" class="btn">Закрыть</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Friends / rooms quick actions -->
+    <div id="modal-prompt" class="modal" hidden>
+      <div class="modal-card">
+        <h2 id="prompt-title">Действие</h2>
+        <input id="prompt-input" type="text" />
+        <p id="prompt-error" class="error" hidden></p>
+        <div class="row">
+          <button id="prompt-ok" class="btn primary">ОК</button>
+          <button id="prompt-cancel" class="btn">Отмена</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="vendor/socket.io.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

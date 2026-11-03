@@ -1,0 +1,10 @@
+Сборка Windows на этой Linux-машине:
+- electron-builder упаковал win-unpacked успешно
+- portable/NSIS .exe требует wine (не установлен) — шаг подписи падает
+- Готовый распакованный клиент: client/dist/win-unpacked/ (запуск Overlay Chat.exe на Windows)
+- Архив: client/dist/OverlayChat-Windows-x64.zip
+
+На Windows-ПК:
+  cd client && npm install
+  mkdir -p src/vendor && copy node_modules\socket.io-client\dist\socket.io.min.js src\vendor\
+  npx electron-builder --win

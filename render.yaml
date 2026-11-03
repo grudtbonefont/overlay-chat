@@ -1,0 +1,20 @@
+# Overlay Chat — Render Blueprint
+# Free web: SQLite на эфемерном диске (данные сбрасываются при редеплое).
+# Для сохранения БД: платный план + Disk, смонтированный в /var/data, DATA_DIR=/var/data
+services:
+  - type: web
+    name: overlay-chat-server
+    runtime: node
+    plan: free
+    region: frankfurt
+    rootDir: server
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: "22.14.0"
+      - key: JWT_SECRET
+        generateValue: true
+      - key: DATA_DIR
+        value: /opt/render/project/src/data

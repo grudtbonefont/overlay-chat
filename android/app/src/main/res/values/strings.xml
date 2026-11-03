@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Overlay Chat</string>
+    <string name="overlay_notification_channel">Оверлей-чат</string>
+    <string name="overlay_notification_title">Overlay Chat активен</string>
+    <string name="overlay_notification_text">Окно чата поверх игр. Нажмите, чтобы открыть приложение.</string>
+</resources>

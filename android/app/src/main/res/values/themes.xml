@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Системные шрифты, без Google Fonts / CDN -->
+    <style name="Theme.OverlayChat" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/accent</item>
+        <item name="colorPrimaryVariant">@color/accent_dim</item>
+        <item name="colorOnPrimary">@color/text</item>
+        <item name="android:statusBarColor">#121418</item>
+        <item name="android:navigationBarColor">#121418</item>
+        <item name="android:windowBackground">#121418</item>
+        <item name="android:textColorPrimary">@color/text</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+</resources>

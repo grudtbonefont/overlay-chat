@@ -1,0 +1,11 @@
+{
+  "name": "overlay-chat-tests",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "node test-api.js"
+  },
+  "dependencies": {
+    "socket.io-client": "^4.8.1"
+  }
+}
