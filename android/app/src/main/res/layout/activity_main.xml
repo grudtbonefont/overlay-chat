@@ -107,7 +107,7 @@
             android:id="@+id/inputServer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="http://192.168.x.x:3000"
+            android:hint="https://overlay-chat-server-4wmq.onrender.com"
             android:inputType="textUri"
             android:textColor="@color/text"
             android:textColorHint="@color/muted"

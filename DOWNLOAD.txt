@@ -1,21 +1,20 @@
-Windows-сборка (содержимое win-unpacked, ~111 МБ):
+Сервер (публичный HTTPS, Frankfurt / Render free):
+https://overlay-chat-server-4wmq.onrender.com
 
-Локально: /workspace/overlay-chat/client/dist/OverlayChat-Windows-x64.zip
+Проверено curl: GET /api/health 200, POST /api/register 201, POST /api/login 200, Socket.IO EIO=4 polling handshake 200.
+Важно: free-tier Render — SQLite на эфемерном диске; данные сбрасываются при редеплое/сне. Persistent Disk на free недоступен через MCP; для persistence — платный план + Disk (DATA_DIR).
 
-Публичная ссылка (gofile; catbox.moe: "Uploads paused"):
-https://gofile.io/d/d8eEhV11
-
-MD5: a8a84fa3335e17bcae2491c5840418b5
-Файл: OverlayChat-Windows-x64.zip
-
-Запуск: распаковать → OverlayChat/Overlay Chat.exe
-Сервер отдельно (README → «Хостинг»): Timeweb/Selectel и т.п., без VPN в РФ.
-Ассеты локальные (system fonts + src/vendor/socket.io.min.js).
-
----
-Android debug APK (~6.2 МБ):
-
+Android debug APK (дефолт URL = публичный сервер):
 Локально: /workspace/overlay-chat/android/dist/OverlayChat-android-debug.apk
-Публичная ссылка (gofile; catbox paused): https://gofile.io/d/wQRfO1Zl
-MD5: dcc8047c21970464b91c8ec923aad696
+MD5: 23b2184e051477965025612a5e600f22
+tmpfiles: https://tmpfiles.org/dl/wbAnokcGAH3y/overlaychat-android-debug.apk
 package: ru.overlaychat.app
+
+Windows (win-unpacked zip, дефолт URL = публичный сервер):
+Локально: /workspace/overlay-chat/client/dist/OverlayChat-Windows-x64.zip
+MD5: 49519d4c02411a7d21e74662c7116d9b
+Размер ~111 МБ — tmpfiles.org вернул 413 Payload Too Large; публичная ссылка отдельно (gofile).
+
+Запуск Windows: распаковать → OverlayChat/Overlay Chat.exe
+GitHub: https://github.com/grudtbonefont/overlay-chat
+Render dashboard: https://dashboard.render.com/web/srv-dbkneemc6qcc73aupb7g

@@ -4,7 +4,7 @@ const Store = require('electron-store');
 
 const store = new Store({
   defaults: {
-    serverUrl: 'http://localhost:3000',
+    serverUrl: 'https://overlay-chat-server-4wmq.onrender.com',
     hotkey: 'CommandOrControl+Enter',
     token: null,
     nickname: null,

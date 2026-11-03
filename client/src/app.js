@@ -38,7 +38,7 @@
   }
 
   async function api(path, opts = {}) {
-    const base = (settings.serverUrl || 'http://localhost:3000').replace(/\/$/, '');
+    const base = (settings.serverUrl || 'https://overlay-chat-server-4wmq.onrender.com').replace(/\/$/, '');
     const headers = { 'Content-Type': 'application/json', ...(opts.headers || {}) };
     if (token) headers.Authorization = 'Bearer ' + token;
     const res = await fetch(base + path, { ...opts, headers });
@@ -57,7 +57,7 @@
   function connectSocket() {
     if (socket) { try { socket.disconnect(); } catch (_) {} socket = null; }
     if (!token || !ioLib) return;
-    const base = (settings.serverUrl || 'http://localhost:3000').replace(/\/$/, '');
+    const base = (settings.serverUrl || 'https://overlay-chat-server-4wmq.onrender.com').replace(/\/$/, '');
     socket = ioLib(base, {
       auth: { token },
       transports: ['websocket', 'polling'],
@@ -336,7 +336,7 @@
     if (!window.overlayAPI) {
       // Browser fallback for testing without Electron
       window.overlayAPI = {
-        getSettings: async () => ({ serverUrl: 'http://localhost:3000', hotkey: 'CommandOrControl+Enter', token: null, nickname: null, opacity: 0.85, locked: false }),
+        getSettings: async () => ({ serverUrl: 'https://overlay-chat-server-4wmq.onrender.com', hotkey: 'CommandOrControl+Enter', token: null, nickname: null, opacity: 0.85, locked: false }),
         setSettings: async (p) => p,
         setLocked: async () => ({}),
         setIgnoreMouse: async () => {},
@@ -466,7 +466,7 @@
   }
 
   function openSettings() {
-    $('#set-server').value = settings.serverUrl || 'http://localhost:3000';
+    $('#set-server').value = settings.serverUrl || 'https://overlay-chat-server-4wmq.onrender.com';
     $('#set-hotkey').value = settings.hotkey || 'CommandOrControl+Enter';
     const op = Math.round((settings.opacity || 0.85) * 100);
     $('#set-opacity').value = op;

@@ -11,7 +11,7 @@ object Prefs {
     }
 
     var serverUrl: String
-        get() = p.getString("serverUrl", "http://10.0.2.2:3000") ?: "http://10.0.2.2:3000"
+        get() = p.getString("serverUrl", "https://overlay-chat-server-4wmq.onrender.com") ?: "https://overlay-chat-server-4wmq.onrender.com"
         set(v) = p.edit().putString("serverUrl", v.trim().trimEnd('/')).apply()
 
     var token: String?
