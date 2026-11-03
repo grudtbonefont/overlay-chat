@@ -7,14 +7,16 @@ https://overlay-chat-server-4wmq.onrender.com
 Android debug APK (дефолт URL = публичный сервер):
 Локально: /workspace/overlay-chat/android/dist/OverlayChat-android-debug.apk
 MD5: 23b2184e051477965025612a5e600f22
-tmpfiles: https://tmpfiles.org/dl/wbAnokcGAH3y/overlaychat-android-debug.apk
+tmpfiles (прямой /dl/): https://tmpfiles.org/dl/1793689153.cccac878963eb859/wbAnokcGAH3y/overlaychat-android-debug.apk
+Страница: https://tmpfiles.org/wbAnokcGAH3y/overlaychat-android-debug.apk
 package: ru.overlaychat.app
+Если уже ставили старый APK — в настройках укажите URL сервера выше или очистите данные приложения (старый дефолт localhost/эмулятор сохранился в Prefs).
 
 Windows (win-unpacked zip, дефолт URL = публичный сервер):
 Локально: /workspace/overlay-chat/client/dist/OverlayChat-Windows-x64.zip
 MD5: 49519d4c02411a7d21e74662c7116d9b
-Размер ~111 МБ — tmpfiles.org вернул 413 Payload Too Large; публичная ссылка отдельно (gofile).
+gofile (tmpfiles 413 на ~111 МБ): https://gofile.io/d/Mj2mxCrA
+Запуск: распаковать → OverlayChat/Overlay Chat.exe
 
-Запуск Windows: распаковать → OverlayChat/Overlay Chat.exe
 GitHub: https://github.com/grudtbonefont/overlay-chat
 Render dashboard: https://dashboard.render.com/web/srv-dbkneemc6qcc73aupb7g
